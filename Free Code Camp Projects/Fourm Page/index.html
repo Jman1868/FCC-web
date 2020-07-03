@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/CSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <title>Survey</title>
+</head>
+<body>
+    
+    <h1 id="title">Mountain Resort Quality Assurance</h1>
+    <p id="description">This is a quality assurance form. Tell us how we did!</p>
+    <hr>
+    <div id="form">
+    <form id="survey-form">
+
+        <div id="basic-info">
+        <label for="name" id="name-label">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Jonh Doe"required><br>
+
+        <br>
+
+        <label for="email" id="email-label">Email:</label>
+        <input type="email" id="email" name="email" placeholder="email123@email.com"required><br>
+
+        <br>
+
+        <label for="number" id="number-label">Rate your overall experience:</label>
+        <input type="number" id="number" name="number" min="0" max="10" placeholder="0"required><br>
+        </div>
+
+        <div id="dropdown">
+            <br>
+        <label for="coming-back"> In one word, how would you describe your time here?</label>
+        <select>
+            <option value="Perfect"> Perfect </option>
+            <option value="Wonderful"> Wonderful </option>
+            <option value="Great"> Great </option>
+            <option value="Nice"> Nice </option>
+            <option value="Ok"> Ok </option>
+            <option value="Bland"> Bland </option>
+            <option value="Bad"> Bad </option>
+            <option value="Terrible"> Terrible </option>
+            <option value="Horrible"> Horrible </option>
+            
+        </select><br>
+        </div>
+
+        <div id="returning-customer" >
+            <p>how likely is it for you to return?</p>
+            <input type="radio" id="likely" name="return" value="likely">
+            <label for="likely"> Likely </label> 
+            <input type="radio" id="unlikely" name="return" value="unlikely">
+            <label for="unlikely"> Unlikely </label>
+
+
+        </div>
+
+        <div id="Staff-review">
+            <p>Our staff is: </p>
+            <label for="great">Great:</label>
+            <input type="checkbox" id="Great" name="review" value="great">
+            <br>
+            <label for="Ok">Helpful:</label>
+            <input type="checkbox" id="Helpful" name="review" value="Helpful">
+            <br>
+            <label for="Nice">Nice:</label>
+            <input type="checkbox" id="Nice" name="review" value="Nice">
+            <br>
+            <label for="Hardworking">Hardworking:</label>
+            <input type="checkbox" id="Hardworking" name="review" value="Hardworking">
+
+
+
+        </div>
+
+        <div id="text-area">
+
+            <textarea placeholder="Additonal comments"></textarea>
+
+        </div>
+
+        <input id="submit" type="submit">
+
+    </form>
+    </div>
+    <hr>
+
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/css.css">
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;1,300&display=swap" rel="stylesheet">
+    <title>Documentation Page</title>
+</head>
+<body>
+
+    <nav id="navbar">
+        <header><h1>Unity Documentation</h1></header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Why_Unity?">Why Unity?</a></li>
+
+            <li><a class="nav-link" href="#Scripting_in_Unity">Scripting in Unity</a></li>
+
+            <li><a class="nav-link" href="#Anatomy_of_a_Script_file">Anatomy of a Script file</a></li>
+            <li><a class="nav-link" href="#Controlling_a_GameObject">Controlling a GameObject</a></li>
+            <li><a class="nav-link" href="#Variables_and_the_Inspector">Variables and the Inspector</a></li>
+            <li><a class="nav-link" href="#Controlling_GameObjects_using_components">Controlling GameObjects using components</a></li>
+            <li><a class="nav-link" href="#Accessing_Components">Accessing Components</a></li>
+            <li><a class="nav-link" href="#access_other_object">Accessing other objects</a></li>
+            <li><a class="nav-link" href="#Linking_GameObjects_with_variables">Linking GameObjects with variables</a></li>
+            <li><a class="nav-link" href="#Finding_child_GameObjects">Finding child GameObjects</a></li>
+            <li><a class="nav-link" href="#Finding_GameObjects_by_Name_or_Tag">Finding GameObjects by Name or Tag</a></li>
+             
+            <li><a class="nav-link" href="#2d_in_Unity">2d in Unity</a></li>
+
+      
+                <li><a class="nav-link" href="#Gameplay_in_2D">Gameplay in 2D</a></li>
+            <li><a class="nav-link" href="#2D_graphics">2D graphics</a></li>
+            <li><a class="nav-link" href="#2D_Physics">2D Physics</a></li> 
+
+            <li><a class="nav-link" href="#Great_tutorials">Great tutorials</a></li>
+        </ul>
+
+    </nav>
+    <main id="main-doc">
+
+        <section class="main-section" id="Introduction">
+            <header> <h1>Introduction</h1> </header>
+                <div class  ="Paragraph">
+                <p>Unity is a game engine where a person is able to make games easily.</p>
+                <p>It has built in tools to make the process of developing a game easier.</p>
+                <p>This page will explain the general process and expectations of using Unity.</p>
+                </div>
+        </section>
+       
+        
+        <section class="main-section" id="Why_Unity?">
+            <header><h1>Why Unity?</h1></header>
+
+            <div class="list">
+                
+                <p> Here is a list of reasons of why you should use Unity</p>
+                <ul>
+                    <li> It is easy to code in</li>
+                    <li> There are many tutorials for Unity</li>
+                    <li> Unity has support for both 2d and 3d game creation</li>
+                    <li> It has great cross platform production</li>
+                    <li> You are able to get a variety of assets from the Assest Store</li>
+                </ul>
+            </div>
+
+
+        </section>
+
+
+        <section class="main-section" id="Scripting_in_Unity">
+            <header> <h1>Scripting in Unity</h1>  </header>
+
+            <div class="Scripting-Paragraph">
+
+                <p>
+                Unity allows you to create your own Components using scripts. 
+                These allow you to trigger game events, modify Component properties over 
+                time and respond to user input in any way you like.
+                </p>
+
+                <p>
+                Unity supports the C# programming language natively. 
+                C# (pronounced C-sharp) is an industry-standard language similar to Java or C++
+                </p>
+
+                <div id="Anatomy_of_a_Script_file">  
+                <h3>Anatomy of a Script file</h3>
+
+                <p>When you double-click a script Asset in Unity, it will be opened in a text editor. 
+                By default, Unity will use Visual Studio, 
+                but you can select any editor you like from the 
+                External Tools panel in Unity’s preferences (go to Unity > Preferences).
+                </p>
+                <p>The initial contents of the file will look something like this:</p>
+                    <code> <pre></pre>
+                        using UnityEngine;
+                        using System.Collections;
+                        
+                        public class MainPlayer : MonoBehaviour {
+                        
+                            // Use this for initialization
+                            void Start () {
+                            
+                            }
+                            
+                            // Update is called once per frame
+                            void Update () {
+                            
+                            }
+                        }
+                        </pre>
+                        </code>
+
+                        <p>A script makes its connection with the internal workings of Unity by implementing a class which derives from the built-in class called MonoBehaviour. 
+                        You can think of a class as a kind of blueprint for creating a new Component type that can be attached to GameObjects. Each time you attach a script component to a GameObject, 
+                        it creates a new instance of the object defined by the blueprint. 
+                        The name of the class is taken from the name you supplied when the file was created. The class name and file name must be the same to enable the script component to be attached to a GameObject.
+                        The main things to note, however, are the two functions defined inside the class. The Update function is the place to put code that will handle the frame update for the GameObject. 
+                        This might include movement, triggering actions and responding to user input, basically anything that needs to be handled over time during gameplay. To enable the Update function to do its work, 
+                        it is often useful to be able to set up variables, read preferences and make connections with other GameObjects before any game action takes place. 
+                        The Start function will be called by Unity before gameplay begins (ie, before the Update function is called for the first time) 
+                        and is an ideal place to do any initialization.
+                    </p>
+                    </div>
+                    <div id="Controlling_a_GameObject">
+                    <h3>Controlling a GameObject</h3>
+
+                    <p>
+                        As noted above, a script only defines a blueprint for a Component and so none of its code will be activated until an
+                        instance of the script is attached to a GameObject. You can attach a script by dragging the script asset to a GameObject
+                        in the hierarchy panel or to the inspector of the GameObject that is currently selected. There is also a Scripts submenu
+                        on the Component menu which will contain all the scripts available in the project, including those you have created
+                        yourself. Once attached, the script will start working when you press Play and run the game. You can check this by adding the
+                        following code in the Start function:
+
+                        <code>
+                        // Use this for initialization
+                            void Start ()
+                            {
+                            Debug.Log("I am alive!");
+                            }
+                        </code>
+                    </p>
+                    </div>
+                    <div id="Variables_and_the_Inspector">
+                    <h3>Variables and the Inspector</h3>
+
+                    <p>When creating a script, you are essentially creating 
+                        your own new type of component that can be attached to Game Objects
+                        just like any other component.</p>
+
+                    <p>Just like other Components often have properties that are editable in the inspector, 
+                        you can allow values in your script
+                        to be edited from the Inspector
+                        too.</p>
+
+                        <code>
+                        <pre>
+
+                        using UnityEngine;
+                        using System.Collections;
+                        
+                        public class MainPlayer : MonoBehaviour
+                        {
+                        public string myName;
+                        
+                        // Use this for initialization
+                        void Start ()
+                        {
+                        Debug.Log("I am alive and my name is " + myName);
+                        }
+                        }
+
+                        </pre>
+                        </code>
+
+                        <p>This code creates an editable field in the Inspector labelled “My Name”.</p>
+                        <p>
+                        Unity creates the Inspector label by introducing a space wherever a capital letter occurs in the variable name. However,
+                        this is purely for display purposes and you should always use the variable name within your code. If you edit the name
+                        and then press Play, you will see that the message includes the text you entered.
+                        </p>
+                        <p>In C#, you must declare a variable as public to see it in the Inspector.</p>
+                        <p>Unity will actually let you change the value of a script’s variables while the game is running. This is very useful for
+                        seeing the effects of changes directly without having to stop and restart. When gameplay ends, the values of the
+                        variables will be reset to whatever they were before you pressed Play. This ensures that you are free to tweak your
+                        object’s settings without fear of doing any permanent damage.</p>
+                    </div>
+                    <div id="Controlling_GameObjects_using_components">
+                        <h3>Controlling GameObjects using components</h3>
+
+                        <p>In the Unity Editor, you make changes to Component properties using the Inspector. So, for example, changes to the position values of the Transform Component
+                        will result in a change to the GameObject’s position. Similarly, you can change the color of a Renderer’s material or
+                        the mass of a Rigidbody
+                        with a corresponding effect on the appearance or behavior of the GameObject. For the most part, scripting is also about
+                        modifying Component properties to manipulate GameObjects.The difference, though, is that a script can vary a property’s value gradually over time or in response to input from
+                        the user. By changing, creating and destroying objects at the right time, any kind of gameplay can be implemented.
+                        </p>
+                        <div id="Accessing_Components">
+                        <h3>Accessing Components</h3>
+
+                        <p>The simplest and most common case is where a script needs access to other Components attached to the same GameObject. As
+                        mentioned in the Introduction section, a Component is actually an instance of a class so the first step is to get a
+                        reference to the Component instance you want to work with. This is done with the GetComponent function. Typically, you
+                        want to assign the Component object to a variable, which is done in C# using the following syntax:</p>
+                        <code>
+                            <pre>
+                                void Start ()
+                                {
+                                Rigidbody rb = GetComponent<Rigidbody>();
+                                }
+                            </pre>
+
+                        </code>
+                        <p>Once you have a reference to a Component instance, you can set the values of its properties much as you would in the
+                        Inspector:</p>
+                        <code>
+                            <pre>
+                                void Start ()
+                                {
+                                Rigidbody rb = GetComponent<Rigidbody>();
+                                
+                                    // Change the mass of the object's Rigidbody.
+                                    rb.mass = 10f;
+                                    }
+                            </pre>
+                        </code>
+                        <p>An extra feature that is not available in the Inspector is the possibility of calling functions on Component instances:</p>
+                          <code>
+                              <pre>
+                                void Start ()
+                                {
+                                Rigidbody rb = GetComponent<Rigidbody>();
+                                
+                                    // Add a force to the Rigidbody.
+                                    rb.AddForce(Vector3.up * 10f);
+                                    }
+                              </pre>
+                          </code>  
+                          <p>Note also that there is no reason why you can’t have more than one custom script attached to the same object. If you
+                        need to access one script from another, you can use GetComponent as usual and just use the name of the script class (or
+                        the filename) to specify the Component type you want.</p>
+
+                        <p>If you attempt to retrieve a Component that hasn’t actually been added to the GameObject then GetComponent will return
+                        null; you will get a null reference error at runtime if you try to change any values on a null object.</p>
+                        </div>
+
+                        <div id="access_other_object">
+                        <h3>Accessing other objects</h3>
+                            <p>
+                                Although they sometimes operate in isolation, it is common for scripts
+                                to keep track of other objects. For example, a pursuing enemy might need to know the position of the player. Unity
+                                provides a number of different ways to retrieve other objects, each appropriate to certain situations.
+
+                            </p>
+
+                        </div>
+                        <div id="Linking_GameObjects_with_variables">
+                            <h3>Linking GameObjects with variables</h3>
+                            <p>
+                            The most straightforward way to find a related GameObject is to add a public GameObject variable to the script:
+                            </p>
+
+                            <code><pre>
+                                public class Enemy : MonoBehaviour
+                                {
+                                public GameObject player;
+                                
+                                // Other variables and functions...
+                                }
+                            </pre></code>
+
+                            <p>You can now drag an object from the scene
+                            or Hierarchy panel onto this variable to assign it. The GetComponent function and Component access variables are
+                            available for this object as with any other, so you can use code like the following:</p>
+
+                            <code><pre>public class Enemy : MonoBehaviour {
+                            public GameObject player;
+                            
+                            void Start() {
+                            // Start the enemy ten units behind the player character.
+                            transform.position = player.transform.position - Vector3.forward * 10f;
+                            }
+                            }
+                            </pre></code>
+
+                            <p>Additionally, if you declare a public variable of a Component type in your script, you can drag any GameObject that has
+                            that Component attached onto it. This accesses the Component directly rather than the GameObject itself.
+                            </p>
+                            
+                            <code><pre>public Transform playerTransform;</pre></code>
+                            
+                            <p>Linking objects together with variables is most useful when you are dealing with individual objects that have permanent
+                            connections. You can use an array variable to link several objects of the same type, but the connections must still be
+                            made in the Unity editor rather than at runtime. It is often convenient to locate objects at runtime and Unity provides
+                            two basic ways to do this, as described below.</p>
+                        </div>
+                        <div id="Finding_child_GameObjects">
+                            <h3>Finding child GameObjects</h3>
+
+                            <p>Sometimes, a game Scene makes use of a number of GameObjects of the same type, such as enemies, waypoints and obstacles.
+                            These may need to be tracked by a particular script that supervises or reacts to them (for example, all waypoints might
+                            need to be available to a pathfinding script). Using variables to link these GameObjects is a possibility but it makes
+                            the design process tedious if each new waypoint has to be dragged to a variable on a script. Likewise, if a waypoint is
+                            deleted, then it is a nuisance to have to remove the variable reference to the missing GameObject. In cases like this,
+                            it is often better to manage a set of GameObjects by making them all children of one parent GameObject. The child
+                            GameObjects can be retrieved using the parent’s Transform component (because all GameObjects implicitly have a
+                            Transform):</p>
+
+                            <code><pre>
+                            using UnityEngine;
+                            
+                            public class WaypointManager : MonoBehaviour {
+                            public Transform[] waypoints;
+                            
+                            void Start()
+                          {
+                            waypoints = new Transform[transform.childCount];
+                            int i = 0;
+                            
+                            foreach (Transform t in transform)
+                            {
+                            waypoints[i++] = t;
+                            }
+                          }
+                        }
+                            </pre></code>
+                            <p>You can also locate a specific child object by name using the Transform.Find function: transform.Find("Gun");</p>
+                            <p>This can be useful when an object has a child that can be added and removed during gameplay. A weapon that can be picked
+                            up and put down is a good example of this.</p>
+
+                        </div>
+                        <div id="Finding_GameObjects_by_Name_or_Tag">
+                            <h3>Finding GameObjects by Name or Tag</h3>
+
+                            <p>It is always possible to locate GameObjects anywhere in the Scene hierarchy as long as you have some information to
+                            identify them. Individual objects can be retrieved by name using the GameObject.Find function:</p>
+
+                            <code><pre>
+                            GameObject player;
+                            
+                            void Start()
+                            {
+                            player = GameObject.Find("MainHeroCharacter");
+                            }
+                        </pre></code>
+
+                            <p>An object or a collection of objects can also be located by their tag using the GameObject.FindWithTag and
+                            GameObject.FindGameObjectsWithTag functions:-</p>
+                            
+                            <code><pre>
+                            GameObject player;
+                            GameObject[] enemies;
+                            
+                            void Start()
+                            {
+                            player = GameObject.FindWithTag("Player");
+                            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                            }
+                            </pre></code>
+
+
+                        </div>
+
+                        <a href="https://docs.unity3d.com/Manual/ScriptingConcepts.html" target="_blank">For more details about Unity scripting click here</a>
+                    </div>
+
+
+                
+
+
+
+            </div>
+
+        </section>
+
+        <section class="main-section" id="2d_in_Unity">
+            <header><h1>2d in Unity</h1></header>
+            <p>This contains information about 2d gameplay in unity</p>
+
+            <div id="Gameplay_in_2D">
+
+            <h3>Gameplay in 2D</h3>
+            
+                <p>While famous for its 3D capabilities, Unity can also be used to create 2D games. The familiar functions of the editor
+                are still available but with helpful additions to simplify 2D development.</p>
+
+                <p>The most immediately noticeable feature is the 2D view mode button in the toolbar
+                of the Scene view
+                . When 2D mode is enabled, an orthographic (ie, perspective-free) view will be set; the camera
+                looks along the Z axis with the Y axis increasing upwards. This allows you to visualise the scene
+                and place 2D objects easily.</p>
+                
+            </div>
+
+            <div id="2D_graphics">
+                <h3>2D graphics</h3>
+                <p>Graphic objects in 2D are known as Sprites. Sprites are essentially just standard textures but there are special techniques for combining and managing sprite
+                textures for efficiency and convenience during development. Unity provides a built-in Sprite Editor to let you extract
+                sprite graphics from a larger image. This allows you to edit a number of component images within a single texture in
+                your image editor. You could use this, for example, to keep the arms, legs and body of a character as separate elements
+                within one image.</p>
+
+                <p>Sprites are rendered with a Sprite Renderer
+                component rather than the Mesh Renderer
+                used with 3D objects. You can add this to a GameObject via the Components menu (Component > Rendering > Sprite Renderer
+                or alternatively, you can just create a GameObject directly with a Sprite Renderer already attached (menu: GameObject >
+                2D Object > Sprite).</p>
+                    
+                <p>In addition, you can use a Sprite Creator tool to make placeholder 2D images.</p>
+
+            </div>
+
+            <div id="2D_Physics">
+                <h3>2D Physics</h3>
+                <p>Unity has a separate physics engine
+                for handling 2D physics so as to make use of optimizations only available with 2D. The components correspond to the
+                standard 3D physics components such as Rigidbody, Box Collider
+                and Hinge Joint,but with “2D” appended to the name. So, sprites can be equipped with Rigidbody 2D, Box Collider 2D and Hinge Joint 2D.
+                Most 2D physics components are simply “flattened” versions of the 3D equivalents (eg, Box Collider 2D is a square while
+                Box Collider is a cube) but there are a few exceptions.</p>
+
+                <p>For a full list of 2D physics components, see 2D or 3D Projects. See the Physics section of the manual for further
+                information about 2D physics concepts and components. To specify 2D physics settings, see the Physics 2D window.</p>
+            </div>
+
+            <a href="https://docs.unity3d.com/Manual/Unity2D.html" target="_blank">For more information about 2d in Unity click here</a>
+
+        </section>
+
+        <section class="main-section" id="Great_tutorials">
+            <header> <h1>Great tutorials</h1> </header>
+
+            <p> Unity has many great tutorials for you to get started making a game. Below are some great
+                Unity tutorial creators.
+            </p>
+            <ul>
+            <li><a href="https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA" target="_blank">Brakeys</a></li>
+            <li><a href="https://www.youtube.com/channel/UCX_b3NNQN5bzExm-22-NVVg" target="_blank">Jason Weimann</a></li>
+            <li><a href="https://www.youtube.com/user/Cercopithecan" target="_blank"> Sebastion Lauge</a></li>
+
+            </ul>
+
+
+        </section>
+
+
+       
+
+
+
+
+
+    </main>
+</body>
+</html>

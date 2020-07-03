@@ -1,0 +1,58 @@
+
+#main{
+    background-color: rgb(38, 70, 83);
+    font-family: 'Coming Soon', cursive;
+}
+
+
+#img-caption{
+    left: -1000px;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+}
+
+
+h1{
+    text-align: center;
+    color: rgb(42, 157, 143);
+}
+
+#image{
+    max-width: 100%;
+    height: 253px;
+    display: block;
+    margin: auto;
+    border-radius: 900px;
+    border: 10px solid;
+    animation-name: borderanim;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    
+}
+
+@keyframes borderanim{
+    0%{
+        border-color: cyan;
+    }
+    50%{
+        border-color: paleturquoise;
+    }
+    100%{
+        border-color: cornflowerblue;
+    }
+}
+
+
+#tribute-info{
+    color: rgb(231, 111, 81);
+    align-items: center;
+    font-family: 'Coming Soon', cursive;
+    text-align: center;
+    list-style-position: inside;
+}
+#tribute-link{
+    text-align: center;
+}
+
+

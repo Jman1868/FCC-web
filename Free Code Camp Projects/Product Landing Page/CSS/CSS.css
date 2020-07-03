@@ -1,0 +1,160 @@
+
+body{
+    background-color: whitesmoke;
+   
+}
+
+h1{
+    color: rgb(43, 48, 58);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+p{
+    color:rgb(43, 48, 58);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+  }
+
+
+#nav-bar{
+    list-style-type: none;
+    margin: 0;
+    position: fixed;
+ 
+    top: 0;
+    Left: 0;
+    width: 100%;
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+  
+   
+    
+}
+li {
+    display: inline-block;
+    padding:5px;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+}
+#header-img {
+    position:absolute;
+    left:10px;
+}
+
+#about-us{
+    background-image: url(../Images/About\ us.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    font-size: large;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+
+   
+}
+
+#about-us h1{
+    position: static;
+    top: 50px;
+    left: 10px;
+    color: coral;
+}
+#about-us p{
+
+    position: static;
+    top: 50px;
+    left: 10px;
+    width: 450px;
+    word-wrap: break-word;
+    text-align: justify;
+    
+   
+    color: rgb(255, 127, 80);
+}
+
+
+
+
+#our-product{
+   
+    background-image: url(../Images/Product7.jpg);
+    height: 500px;
+    background-size: cover;
+    background-position: 0% 70%;
+    font-size: large;
+    
+}
+#pricing
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin:1%;
+    
+    
+    
+}
+
+img{
+   
+    max-width:100%;
+    max-height:100%;
+    border-radius: 5px;
+}
+
+.price-tile:hover{
+     box-shadow: 0 2px 40px 0 rgba(85, 61, 61, 0.4);
+     width: 450px;
+}
+.price-tile{
+    
+    box-shadow: 0 2px 8px 0 rgba(85, 61, 61, 0.4);
+    height: 400px;
+    width: 350px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 50px;
+   
+}
+
+
+
+#video{
+    width: 500px;
+    height: 400px;
+    position: relative;
+    left: 32%;
+}
+#form{
+    
+    margin-top: 85px;
+    
+
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+@media only screen and (max-width: 600px) {
+       #video{
+    width: 500px;
+    height: 400px;
+    position: relative;
+    
+}
+  }
+  
+    

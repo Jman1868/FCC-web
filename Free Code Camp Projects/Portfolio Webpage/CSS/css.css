@@ -1,0 +1,140 @@
+
+#navbar{
+    list-style-type: none;
+    
+    position: absolute;
+ 
+    top: 0;
+    Left: 0;
+    width: 100%;
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+#navbar li{
+    display: inline-block;
+    list-style: none;
+    justify-content: space-around;
+    padding: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+
+#welcome-section{
+     background-image: url(../Images/Background7.jpg);
+    background-size: cover;
+    text-align: center;
+    
+    font-size: larger;
+    color: white;
+    height: 200vh; 
+    
+}
+
+.Welcome{
+    position: relative;
+    top: 15%;
+    text-align: center;
+    padding: 20%;
+    
+}
+
+
+#projects{
+     flex-wrap: wrap;
+     display: flex;
+     flex-direction: row wrap;
+     justify-content: space-around;
+    
+}
+
+.grid::after {
+    content: "";
+    flex: auto;
+  }
+#projects h1{
+    flex-basis: 100%;
+    text-align: center;
+    /* font-family: 'Ubuntu', sans-serif; */
+}
+
+.card-image{
+
+ /* padding: 5px; 
+border-bottom: solid;
+border-color: rgba(0, 0, 0, 0.2); */
+
+}
+
+.project-tile:hover{
+    box-shadow: 0 4px 50px 0 rgba(85, 61, 61, 0.4);
+    height: 420px;
+    width: 400px;
+    border-radius: 20px;
+    margin: 20px;
+}
+.project-tile{
+    
+    box-shadow: 0 2px 8px 0 rgba(85, 61, 61, 0.4);
+    height: 400px;
+    width: 350px;
+    border-radius: 20px;
+    margin: 20px;
+    
+}
+
+.card-text{
+    text-align: center;
+}
+
+img{
+   
+    max-width:100%;
+    max-height:100%;
+    border-radius: 5px;
+}
+
+.filling-empty-space-childs {
+    width:205px; /*the width of the images in this example*/
+    height:0; /*Important! for the divs to collapse should they fall in a new row*/
+}
+h1{
+    font-family: 'Ubuntu', sans-serif;
+}
+p{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+#contact{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+#contact img{
+   width: 32px;
+   height: 32px;
+}
+
+@media only screen and (max-width: 815px){
+    
+    
+    
+    
+    #welcome-section{
+    background-image: url(../Images/Background7.jpg);
+       background-size: cover;
+       text-align: center;
+       
+       font-size: larger;
+       color: white;
+       height: 100vh;
+       
+      
+    
+       
+   }
+}
